@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "importHelpers": true,
     "outDir": "./wwwroot/clientapp/out-tsc",
     "sourceMap": true,
     "declaration": false,
