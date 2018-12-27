@@ -1,8 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
 namespace CoreTest.Controllers
 {
@@ -12,9 +9,25 @@ namespace CoreTest.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<List<User>> Get()
         {
-            return new string[] { "value1", "value2" };
+            List<User> users = new List<User>() {
+                new User{
+                    Id = 1,
+                    Name = "First User"
+                },
+                new User{
+                    Id = 2,
+                    Name = "Second User"
+                },
+                new User{
+                    Id = 3,
+                    Name = "Third User"
+                }
+            };
+
+
+            return Ok(users);
         }
 
         // GET api/values/5
@@ -41,5 +54,12 @@ namespace CoreTest.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class User
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
     }
 }
