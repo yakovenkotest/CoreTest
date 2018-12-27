@@ -272,6 +272,7 @@ __pycache__/
 /dist
 /tmp
 /out-tsc
+/wwwroot/clientapp/out-tsc
 
 # dependencies
 /node_modules
